@@ -52,6 +52,16 @@ sh('sudo docker push $registry/nodemongoapp:6.0')
 }
 }
 }
-
+stage('Run application ') {
+steps{
+script {
+docker.withRegistry("http://"+registry, registryCredentials
+) {
+sh('sudo docker pull $registry/nodemongoapp:6.0 ')
+sh('sudo docker-compose up -d ')
+}
+}
+}
+}
 }
 }
