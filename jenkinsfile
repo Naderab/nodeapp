@@ -57,8 +57,8 @@ steps{
 script {
 docker.withRegistry("http://"+registry, registryCredentials
 ) {
-sh('sudo docker pull $registry/nodemongoapp:6.0 ')
-sh('sudo docker-compose up -d ')
+sh('sudo docker pull $registry/nodemongoapp:6.0')
+sh('sudo docker-compose up')
 }
 }
 }
