@@ -2,7 +2,7 @@ pipeline{
 agent any
 environment {
 registryCredentials = "nexus"
-registry = "172.18.0.1:8081"
+registry = "172.18.0.1:8083"
 }
 stages {
 stage('Install dependencies') {
@@ -46,8 +46,7 @@ sh('sudo docker-compose build')
 stage('Deploy to Nexus') {
 steps{
 script {
-docker.withRegistry("http://"+registry,
-registryCredentials ) {
+docker.withRegistry("http://"+registry,registryCredentials ) {
 sh('sudo docker push $registry/nodemongoapp:5.0 ')
 }
 }
