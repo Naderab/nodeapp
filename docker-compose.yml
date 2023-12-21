@@ -10,7 +10,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - mongo-data:/data/dump
+      - ./data/dump:/dump
 
   app:
     build: .
@@ -19,7 +19,7 @@ services:
     container_name: back
     ports:
       - 5000:5000
-    links:
+    depends_on:
       - db
 volumes:
   mongo-data:
