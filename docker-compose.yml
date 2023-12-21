@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 services:
   db:
     image: mongo:4.2
@@ -15,13 +15,12 @@ services:
 
   app:
     build: .
-    image: 172.18.0.1/:8083/nodemongoapp:6.0
+    image: 172.18.0.1:8083/nodemongoapp:6.0
     restart: always
     container_name: back
     ports:
-      - '5000:5000'
+      - "5000:5000"
     depends_on:
       - db
-       
 volumes:
   mongo-data:
