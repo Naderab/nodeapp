@@ -2,7 +2,7 @@ pipeline{
 agent any
 environment {
 registryCredentials = "nexus"
-registry = "http://172.18.0.1:8081/repository/docker-repo/"
+registry = "172.18.0.1:8083"
 }
 stages {
 stage('Install dependencies') {
