@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const uri = process.env.NODE_ENV === 'test' ? process.env.MONGO_URI : process.env.MONGO_URI_TEST;
+const uri = process.env.NODE_ENV === 'test' ? process.env.MONGO_URI_TEST : process.env.MONGO_URI;
 console.log(process.env.NODE_ENV);
 const connectDB = async () => {
     try {
-        await mongoose.connect("mongodb://root:example@db:27017",
+        await mongoose.connect(uri,
             {
                 useNewUrlParser: true,
                 useUnifiedTopology: true
