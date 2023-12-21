@@ -4,7 +4,7 @@ const uri = process.env.NODE_ENV === 'test' ? process.env.MONGO_URI : process.en
 console.log(process.env.NODE_ENV);
 const connectDB = async () => {
     try {
-        await mongoose.connect(uri,
+        await mongoose.connect("mongodb+srv://mehdy:123456m@cluster0.1vtradk.mongodb.net/?retryWrites=true&w=majority",
             {
                 useNewUrlParser: true,
                 useUnifiedTopology: true
